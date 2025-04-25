@@ -35,7 +35,6 @@ To use the playbooks in this repository, you need to have the following:
 
 ## Repository Structure
 
-- `roles/`: Contains Ansible roles for modular configuration.
 - `playbooks/`: Directory for playbooks to automate specific tasks.
 - `inventory`: File to define the hosts and groups for Ansible.
 - `README.md`: Documentation for the repository.
