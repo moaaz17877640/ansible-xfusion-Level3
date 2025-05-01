@@ -1,0 +1,43 @@
+---
+- name: Install and Configure vsftpd
+  hosts: stapp01
+  become: true
+  tasks:
+    - name: Install vsftpd package
+      yum:
+        name: vsftpd
+        state: present
+
+    - name: Start vsftpd service
+      service:
+        name: vsftpd
+        state: started
+        enabled: yes
+- name: Install and Configure vsftpd
+  hosts: stapp02
+  become: true
+  tasks:
+    - name: Install vsftpd package
+      yum:
+        name: vsftpd
+        state: present
+
+    - name: Start vsftpd service
+      service:
+        name: vsftpd
+        state: started
+        enabled: yes
+- name: Install and Configure vsftpd
+  hosts: stapp03
+  become: true
+  tasks:
+    - name: Install vsftpd package
+      yum:
+        name: vsftpd
+        state: present
+
+    - name: Start vsftpd service
+      service:
+        name: vsftpd
+        state: started
+        enabled: yes
