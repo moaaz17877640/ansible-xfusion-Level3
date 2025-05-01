@@ -1,0 +1,82 @@
+---
+- name:  install httpd on app server1
+  hosts: stapp01
+  become: true
+  tasks:
+    - name: Install httpd package
+      yum:
+        name: httpd
+        state: present
+
+    - name: Start httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+    - name: create file index.html
+      copy :
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0744'
+        content: "This is a Nautilus sample file, created using Ansible!\n"
+
+    - name : using lineinfile module to add a line to the file
+      lineinfile:
+        path: /var/www/html/index.html
+        line: "Welcome to xFusionCorp Industries!"
+
+- name:  install httpd on app server1
+  hosts: stapp02
+  become: true
+  tasks:
+    - name: Install httpd package
+      yum:
+        name: httpd
+        state: present
+
+    - name: Start httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+    - name: create file index.html
+      copy :
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0744'
+        content: "This is a Nautilus sample file, created using Ansible!\n"
+
+    - name : using lineinfile module to add a line to the file
+      lineinfile:
+        path: /var/www/html/index.html
+        line: "Welcome to xFusionCorp Industries!"
+        
+- name:  install httpd on app server1
+  hosts: stapp03
+  become: true
+  tasks:
+    - name: Install httpd package
+      yum:
+        name: httpd
+        state: present
+
+    - name: Start httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+    - name: create file index.html
+      copy :
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0744'
+        content: "This is a Nautilus sample file, created using Ansible!\n"
+
+    - name : using lineinfile module to add a line to the file
+      lineinfile:
+        path: /var/www/html/index.html
+        line: "Welcome to xFusionCorp Industries!"
+                
